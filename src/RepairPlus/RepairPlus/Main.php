@@ -25,7 +25,7 @@ class Main extends PluginBase implements Listener{
     }
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args):bool{
         if($cmd->getName() == "repair"){
-            if(!$sender->hasPermission("repair.use"))
+            if(!$sender->hasPermission("repair.command"))
                 $sender->sendMessage($this->getPermissionMessage());
             if(!($sender instanceof Player)){
                 $sender->sendMessage("RepairPlus", false);
