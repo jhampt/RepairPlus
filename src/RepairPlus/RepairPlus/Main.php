@@ -35,13 +35,19 @@ class Main extends PluginBase implements Listener{
                 if ($result == null) {
                 }
                 switch ($result) {
+                    case 0:
+                        $sender->sendMessage("Item Repaired");
+                        $sender->getInventory()->setItem($index, $item->setDamage(0));
+                        $sender->getInventory()->getHeldItemIndex();
+                        $sender->getInventory()->getItem($index);
+                        break;
                 }
             });
             $form->setTitle("RepairPlus");
             $form->setContent("Repair Below:\nEnter The Damage Amount You Want To Change Your Item To");
-            $form->addInput("");
-            $form->addButton("Confirm");
+            $form->addButton("Repair");
             $form->sendToPlayer($sender);
+        //    $form->addInput(""); //
         }
         return true;
     }
