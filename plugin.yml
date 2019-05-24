@@ -1,0 +1,14 @@
+name: RepairPlus
+main: RepairPlus\RepairPlus\Main
+version: 1.0.0
+api: [3.0.0]
+load: POSTWORLD
+author: jhampt
+commands:
+ repair:
+  description: Repair Command
+  usage: /repair
+  permission: repair.command
+permissions:
+ repair.command:
+  default: op
