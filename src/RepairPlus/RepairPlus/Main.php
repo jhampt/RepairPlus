@@ -1,33 +1,21 @@
 <?php
-
 namespace RepairPlus\RepairPlus;
-
 use pocketmine\Server;
-
 use pocketmine\Player;
-
 use pocketmine\plugin\PluginBase;
-
 use jojoe77777\FormAPI;
-
 use pocketmine\command\Command;
-
 use pocketmine\command\CommandSender;
-
 use pocketmine\event\Listener;
-
 use pocketmine\event\server\ServerCommandEvent;
-
-class EnchantmentInfo extends PluginBase implements Listener{
+class Main extends PluginBase implements Listener{
     public function onEnable(): void{
         $this->getServer()->getPluginManager()->registerEvents(($this), $this);
         $this->getLogger()->info("RepairPlus Enabled By jhampt");
     }
-  
     public function onDisable(): void{
         $this->getLogger()->info("RepairPlus Disabled By jhampt");
     }
-  
     public function checkDepends(): void{
         $this->formapi = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
         if(is_null($this->formapi)){
@@ -35,7 +23,6 @@ class EnchantmentInfo extends PluginBase implements Listener{
             $this->getPluginLoader()->disablePlugin($this);
         }
     }
-  
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args):bool{
         if($cmd->getName() == "repair"){
             if(!($sender instanceof Player)){
