@@ -6,6 +6,7 @@ load: POSTWORLD
 author: jhampt
 commands:
  repair:
+  alias: [fix]
   description: Repair Command
   usage: /repair
   permission: repair.command
