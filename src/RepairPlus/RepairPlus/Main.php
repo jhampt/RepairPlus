@@ -38,6 +38,9 @@ class Main extends PluginBase implements Listener{
                 }
                 switch ($result) {
                     case 0:
+                        $sender->sendMessage("Closing RepairPlus");
+                        break;
+                    case 1:
                         $sender->sendMessage("Item Repaired");
                         $sender->getInventory()->setItem($index, $item->setDamage(0));
                         $sender->getInventory()->getHeldItemIndex();
